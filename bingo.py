@@ -6,7 +6,7 @@
 
 for i in range(1, 101):
     if i % 3 == 0 and i % 5 == 0:
-        print("bingo")
+        print("Bingo")
     elif i % 3 == 0:
         print("Bin")
     elif i % 5 == 0:

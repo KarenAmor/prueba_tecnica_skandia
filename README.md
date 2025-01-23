@@ -87,3 +87,16 @@ El **Ciclo de Vida de Software (SDLC)** es un conjunto de fases que describen c�
 
 - **throw;**: Relanza la misma excepción sin modificarla, conservando la información de la pila de llamadas.
 - **throw ex;**: Crea y lanza una nueva excepción a partir de la capturada, lo que puede perder detalles de la excepción original.
+
+
+## 2. Algoritmos: 
+Son los archivos creados con Python
+
+## 3. Análisis de Modelado de datos:
+
+![Modelo entidad relación](image.png)
+
+Las consultas SQL estan en el archivo Postaman enviado a traves del correo, estas consultas son originarias de PostgresSQL
+```javascript
+const amor = string
+```
