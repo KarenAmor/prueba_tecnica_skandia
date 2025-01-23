@@ -96,7 +96,59 @@ Son los archivos creados con Python
 
 ![Modelo entidad relación](image.png)
 
-Las consultas SQL estan en el archivo Postaman enviado a traves del correo, estas consultas son originarias de PostgresSQL
-```javascript
-const amor = string
+Para mayor facilidad las consultas SQL estan en el archivo Postaman enviado a traves del correo, estas consultas son originarias de PostgresSQL
+# Cuestionario
+
+- Cuenta de Ahorro con mayor número de titulares
+```bash
+curl --location 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/get_max_count' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg'
+```
+
+- Deuda total de Tarjeta de Crédito por Franquicia
+```bash
+curl --location --request GET 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/obtener_deuda_total_por_franquicia' \
+--header 'Content-Type: application/json' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg' \
+```
+
+- Cliente con mayor Saldo en Canje
+```bash
+curl --location 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/obtener_cliente_mayor_saldo' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg' \
+```
+
+- Cliente con mayor saldo retirado de una Cuenta de Ahorros en un periodo determinado. (Por fecha  de transacción)
+```bash
+curl --location 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/obtener_cliente_mayor_saldo_retirado' \
+--header 'Content-Type: application/json' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg' \
+--data '{
+    "fecha_inicio": "2024-01-01",
+    "fecha_fin": "2024-12-31"
+}'
+```
+
+- Saldo Total de todas las cuentas de ahorro de un cliente.
+```bash
+curl --location 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/obtener_saldo_total_con_nombre' \
+--header 'Content-Type: application/json' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg' \
+--data '{"id_cliente": 31}'
+```
+
+- Numero de Cuentas de Ahorro activas de clientes extranjeros.
+```bash
+curl --location 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/contar_cuentas_extranjeros_activas' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg' \
+```
+- Cuentas de Ahorro activas de clientes extranjeros con nombre
+```bash
+curl --location 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/obtener_cuentas_extranjeros_activas' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg' \
+```
+- Listado de Accionistas que son clientes con su correspondiente Saldo Total de Deuda de todas las  tarjetas de crédito cuyo Saldo Total de Deuda sea mayor a UN MILLÓN DE PESOS.
+```bash
+curl --location 'https://avjbkelvdrstzhtycerf.supabase.co/rest/v1/rpc/obtener_saldo_deuda_accionistas' \
+--header 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2amJrZWx2ZHJzdHpodHljZXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1NzM1NTIsImV4cCI6MjA1MzE0OTU1Mn0.NzHEhMijn9RYmRpntd6bXkWUEdOsNBDS-KNMGMUBgBg' \
 ```
